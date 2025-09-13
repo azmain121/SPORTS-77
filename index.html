@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Casino Slot Game 🎰</title>
+  <style>
+    body { text-align: center; font-family: Arial; background: #222; color: white; }
+    h1 { color: gold; }
+    #slot { font-size: 40px; margin: 20px; }
+    button { padding: 10px 20px; font-size: 18px; background: gold; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: orange; }
+  </style>
+</head>
+<body>
+  <h1>🎰 Casino Slot Game 🎰</h1>
+  <div id="slot">🍒 | 🍋 | 🍊</div>
+  <button onclick="spin()">Spin</button>
+  <p id="result"></p>
+
+  <script>
+    function spin() {
+      let symbols = ["🍒","🍋","🍊","🍇","🍉","⭐","💎"];
+      let slot1 = symbols[Math.floor(Math.random() * symbols.length)];
+      let slot2 = symbols[Math.floor(Math.random() * symbols.length)];
+      let slot3 = symbols[Math.floor(Math.random() * symbols.length)];
+
+      document.getElementById("slot").innerText = slot1 + " | " + slot2 + " | " + slot3;
+
+      if(slot1 === slot2 && slot2 === slot3){
+        document.getElementById("result").innerText = "🎉 Jackpot! You Win!";
+      } else {
+        document.getElementById("result").innerText = "❌ Try Again!";
+      }
+    }
+  </script>
+</body>
+</html>
